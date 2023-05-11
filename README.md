@@ -12,16 +12,6 @@ The vulnerable component is presented as a simple website which is written in no
 
 In this website, there are two different user roles: common user, admin user. The content of the main page after logging in is different. The flag is put on the admin main page. However, a visitor only has a demo account, which is a common user.
 
-### Run The Component in One Step
-
-The vulnerable website has been dockerized and published on [DockerHub](https://hub.docker.com/r/gluckzhang/ctf-jwt-token). You could directly run it with the following command:
-
-```
-docker run --rm -p 8080:8080 gluckzhang/ctf-jwt-token
-```
-
-After that, the website is available via `http://localhost:8080`.
-
 ### Build The Docker Image by Yourself
 
 If you would like to make some modifications and build the image by yourself, the source code and Dockerfile are located in folder `target-website`. After updating the files, run the following command to build the image:
@@ -30,6 +20,13 @@ If you would like to make some modifications and build the image by yourself, th
 cd target-website
 docker build -t IMAGE_TAG .
 ```
+You can now run it with
+
+```
+docker run --rm -p 8080:8080 IMAGE_TAG
+```
+
+After that, the website is available via `http://localhost:8080`.
 
 ## How to Conduct The Attack
 

@@ -7,7 +7,7 @@ var level = require('level');
 var db = level(__dirname + '/db');
 
 var jwt  = require('jsonwebtoken');
-var secret = process.env.JWT_SECRET || "CHANGE_THIS_TO_SOMETHING_RANDOM"; // super secret
+var secret = process.env.JWT_SECRET || "there_was_ika_a_squid_who_likes_to_do_squiddy_things"; // super secret
 
 function loadView(view) {
   var filepath = path.resolve(__dirname, '../views/', view + '.html');
@@ -76,7 +76,7 @@ function authSuccess(req, res, role) {
 }
 
 // lookup person in "database"
-var u = { un: 'longz', pw: 'gogogo', role: 'user' };
+var u = { un: 'user', pw: 'splatoon', role: 'user' };
 
 // handle authorisation requests
 function authHandler(req, res){
@@ -150,7 +150,7 @@ function validate(req, res, callback) {
 
 function notFound(res) {
   res.writeHead(404, {'content-type': 'text/plain'});
-  return res.end('404 Not Found');
+  return res.end('https://http.cat/404');
 }
 
 function home(res) {
